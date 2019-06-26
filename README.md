@@ -27,3 +27,6 @@ for f in files_xls:
     
 dfs['startRent'] = pd.to_datetime(dfs['startRent'])
 dfs.sort_values('startRent')
+
+cols = [col for col in dfs.columns if col[:6] != 'todrop']
+dfs = dfs[cols]
